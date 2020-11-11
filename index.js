@@ -72,25 +72,27 @@ for (let i = 0; i < colorList.length; i++) {
 //almacenamos un listado de li
 let listali = document.querySelectorAll("li");
 
-//añadimos la clase a los li pares
-
+//añadimos el contenido a cada li
 for (let i = 1; i < listali.length; i++){
-  let divHijo1 = document.createElement("div");
-  let newTexto = document.createTextNode("Color: " + colorList[i-1].colorName);
-  divHijo1.appendChild(newTexto);//añade el texto al div
-  divHijo1.classList.add("color-name");
-  listali[i].appendChild(divHijo1);
+  let divHijo1 = document.createElement("div");//creamos div
+  let newTexto = document.createTextNode("Color: " + colorList[i-1].colorName);//sacamos texto
+  divHijo1.appendChild(newTexto);//añadimos el texto al div
+  divHijo1.classList.add("color-name");//añadimos clase al div
+  listali[i].appendChild(divHijo1);//añadimos el div al li
 
   let divHijo2 = document.createElement("div");
   let textoMuestra = document.createTextNode("Muestra");
+  let color = colorList[i-1].hex;
   divHijo2.appendChild(textoMuestra);
   divHijo2.classList.add("color-show");
+  divHijo2.style.backgroundColor=color;
   listali[i].appendChild(divHijo2);
 
   let boton1 = document.createElement("button");
   let textoBoton1 = document.createTextNode("Next item color");
   boton1.appendChild(textoBoton1);
   boton1.classList.add("color-set");
+  boton1.addEventListener("click", itemColor);
   listali[i].appendChild(boton1);
 
   let boton2 = document.createElement("button");
@@ -107,4 +109,8 @@ for (let i = 1; i < listali.length; i++){
  }
 }
 
+//funcionalidades
 
+function itemColor(){
+
+}
