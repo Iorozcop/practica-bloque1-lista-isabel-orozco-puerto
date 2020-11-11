@@ -73,7 +73,38 @@ for (let i = 0; i < colorList.length; i++) {
 let listali = document.querySelectorAll("li");
 
 //añadimos la clase a los li pares
-listali[2].classList.add("color-item--odd");
-listali[4].classList.add("color-item--odd");
-listali[6].classList.add("color-item--odd");
-listali[8].classList.add("color-item--odd");
+
+for (let i = 1; i < listali.length; i++){
+  let divHijo1 = document.createElement("div");
+  let newTexto = document.createTextNode("Color: " + colorList[i-1].colorName);
+  divHijo1.appendChild(newTexto);//añade el texto al div
+  divHijo1.classList.add("color-name");
+  listali[i].appendChild(divHijo1);
+
+  let divHijo2 = document.createElement("div");
+  let textoMuestra = document.createTextNode("Muestra");
+  divHijo2.appendChild(textoMuestra);
+  divHijo2.classList.add("color-show");
+  listali[i].appendChild(divHijo2);
+
+  let boton1 = document.createElement("button");
+  let textoBoton1 = document.createTextNode("Next item color");
+  boton1.appendChild(textoBoton1);
+  boton1.classList.add("color-set");
+  listali[i].appendChild(boton1);
+
+  let boton2 = document.createElement("button");
+  let textoBoton2 = document.createTextNode("Page color");
+  boton2.appendChild(textoBoton2);
+  boton2.classList.add("color-set");
+  listali[i].appendChild(boton2);
+
+  if(i%2==0){
+   listali[i].classList.add("color-item--odd");
+   listali[i].classList.add("color-item");
+   }else{
+   listali[i].classList.add("color-item");
+ }
+}
+
+
