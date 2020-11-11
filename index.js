@@ -95,6 +95,11 @@ for (let i = 1; i < listali.length; i++){
   boton1.addEventListener("click", itemColor);
   listali[i].appendChild(boton1);
 
+  function itemColor(){
+     let colorLi = colorList[i].hex;
+     listali[i].nextSibling.style.backgroundColor=colorLi;
+  }
+
   let boton2 = document.createElement("button");
   let textoBoton2 = document.createTextNode("Page color");
   boton2.appendChild(textoBoton2);
@@ -111,6 +116,4 @@ for (let i = 1; i < listali.length; i++){
 
 //funcionalidades
 
-function itemColor(){
 
-}
