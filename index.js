@@ -60,3 +60,20 @@ const colorList = [
     hex: '#c0c0c0'
   }
 ];
+
+let padreUL = document.querySelector("ul");
+
+//añadimos li al ul recorriendo el array
+for (let i = 0; i < colorList.length; i++) {
+  let li = document.createElement("li");
+  padreUL.appendChild(li);
+}
+
+//almacenamos un listado de li
+let listali = document.querySelectorAll("li");
+
+//añadimos la clase a los li pares
+listali[2].classList.add("color-item--odd");
+listali[4].classList.add("color-item--odd");
+listali[6].classList.add("color-item--odd");
+listali[8].classList.add("color-item--odd");
