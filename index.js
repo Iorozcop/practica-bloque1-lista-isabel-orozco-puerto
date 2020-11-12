@@ -137,14 +137,10 @@ for (let i = 1; i < listali.length; i++) {
     alert(colorList[i - 1].colorName);
   };
   listali[i].addEventListener("click", e => e.stopPropagation(), false);
-
-  //evento click en Body
-  document.body.addEventListener("click", alerta, false);
 }
 
-//funcion para sacar una alerta para el body
-function alerta() {
-  alert("body");
-}
+//evento click en Body
+document.body.addEventListener("click",() => alert("body"), false);
+
 
 
