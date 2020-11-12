@@ -111,14 +111,20 @@ for (let i = 1; i < listali.length; i++){
 
  function itemColor(){
      let colorLi = colorList[i].hex;
+     if(listali[i]= padreUL.lastChild){
+      listali[i+1].backgroundColor= colorList[i].hex;
+     }
      listali[i].nextSibling.style.backgroundColor=colorLi;
   }
 
  function pageColor(){
-   let colorBody = colorList[i-1].hex;
+   //let colorBody = colorList[i-1].hex;
    document.body.style.backgroundColor=colorBody;
  }
 }
 
+document.body.addEventListener("click", alerta);
 
-
+function alerta(){
+  alert("body");
+}
